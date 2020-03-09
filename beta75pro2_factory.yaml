@@ -1,0 +1,86 @@
+# version
+# Betaflight / MATEKF411RX (M41R) 4.1.0 Oct 16 2019 / 11:43:32 (c37a7c91a) MSP API: 1.42
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name MATEKF411RX
+mcu_id 003400303239511134393435
+signature 
+
+# name: Pro series
+
+# beacon
+beacon RX_LOST
+beacon RX_SET
+
+# serial
+serial 1 2048 115200 57600 0 115200
+
+# aux
+aux 0 0 0 1350 2100 0 0
+aux 1 1 1 1300 1700 0 0
+aux 2 2 1 1700 2100 0 0
+aux 3 28 2 900 1300 0 0
+aux 4 35 2 1700 2100 0 0
+
+# master
+set acc_trim_pitch = -6
+set fpv_mix_degrees = 35
+set rx_spi_protocol = FRSKY_X_LBT
+set dshot_idle_value = 450
+set motor_pwm_protocol = DSHOT600
+set current_meter = NONE
+set yaw_motors_reversed = ON
+set small_angle = 180
+set pid_process_denom = 1
+set osd_warn_core_temp = OFF
+set osd_warn_rc_smoothing = OFF
+set osd_warn_fail_safe = OFF
+set osd_warn_launch_control = OFF
+set osd_warn_no_gps_rescue = OFF
+set osd_vbat_pos = 2433
+set osd_rssi_pos = 2241
+set osd_tim_2_pos = 2455
+set osd_flymode_pos = 2423
+set osd_throttle_pos = 2401
+set osd_crosshairs_pos = 2285
+set osd_craft_name_pos = 2441
+set osd_warnings_pos = 2378
+set vtx_freq = 5800
+set rx_spi_protocol = FRSKY_X_LBT
+set frsky_spi_tx_id = 81,145
+set frsky_spi_offset = 29
+set frsky_spi_bind_hop_data = 3,171,106,41,211,146,81,16,186,121,56,226,161,96,31,201,136,71,6,176,111,46,219,151,86,21,191,126,61,231,166,101,36,206,141,76,11,181,116,51,221,156,91,26,196,131,66,255,255,255
+set frsky_x_rx_num = 16
+set name = Pro series
+
+profile 0
+
+profile 1
+
+profile 2
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+rateprofile 4
+
+rateprofile 5
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
+save
