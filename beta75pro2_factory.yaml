@@ -4,38 +4,50 @@
 # start the command batch
 batch start
 
-# reset configuration to default settings
-defaults nosave
-
 board_name MATEKF411RX
-mcu_id 003400303239511134393435
-signature 
 
 # name: Pro series
 
-# beacon
-beacon RX_LOST
-beacon RX_SET
+# resources
+resource RX_BIND 1 B02
+
+# feature
+feature -AIRMODE
+feature MOTOR_STOP
+
+# map
+map TAER1234
 
 # serial
 serial 1 2048 115200 57600 0 115200
 
 # aux
 aux 0 0 0 1350 2100 0 0
-aux 1 1 1 1300 1700 0 0
-aux 2 2 1 1700 2100 0 0
-aux 3 28 2 900 1300 0 0
-aux 4 35 2 1700 2100 0 0
+aux 1 1 1 900 2100 0 0
+aux 2 28 2 900 1300 0 0
+aux 3 35 2 1700 2100 0 0
 
 # master
-set acc_trim_pitch = -6
+set gyro_lowpass_type = BIQUAD
+set gyro_lowpass_hz = 150
+set gyro_lowpass2_hz = 0
+set dyn_notch_range = AUTO
+set dyn_lpf_gyro_min_hz = 150
+set dyn_lpf_gyro_max_hz = 450
+set acc_calibration = -139,136,-232
+set max_check = 2000
 set fpv_mix_degrees = 35
+set airmode_start_throttle_percent = 32
 set rx_spi_protocol = FRSKY_X_LBT
+set blackbox_device = NONE
 set dshot_idle_value = 450
+set dshot_burst = OFF
 set motor_pwm_protocol = DSHOT600
 set current_meter = NONE
+set vbat_detect_cell_voltage = 30
 set yaw_motors_reversed = ON
 set small_angle = 180
+set gps_rescue_throttle_min = 1200
 set pid_process_denom = 1
 set osd_warn_core_temp = OFF
 set osd_warn_rc_smoothing = OFF
@@ -50,37 +62,35 @@ set osd_throttle_pos = 2401
 set osd_crosshairs_pos = 2285
 set osd_craft_name_pos = 2441
 set osd_warnings_pos = 2378
-set vtx_freq = 5800
-set rx_spi_protocol = FRSKY_X_LBT
+set vcd_video_system = NTSC
 set frsky_spi_tx_id = 81,145
 set frsky_spi_offset = 29
 set frsky_spi_bind_hop_data = 3,171,106,41,211,146,81,16,186,121,56,226,161,96,31,201,136,71,6,176,111,46,219,151,86,21,191,126,61,231,166,101,36,206,141,76,11,181,116,51,221,156,91,26,196,131,66,255,255,255
 set frsky_x_rx_num = 16
+set gyro_2_spibus = 1
+set gyro_2_sensor_align = DEFAULT
 set name = Pro series
 
 profile 0
 
-profile 1
-
-profile 2
-
-# restore original profile selection
-profile 0
-
-rateprofile 0
-
-rateprofile 1
-
-rateprofile 2
+# profile 0
+set dyn_lpf_dterm_min_hz = 150
+set dyn_lpf_dterm_max_hz = 250
+set dterm_lowpass_type = BIQUAD
+set dterm_lowpass2_type = BIQUAD
+set iterm_rotation = ON
+set p_pitch = 60
+set i_pitch = 75
+set d_pitch = 32
+set f_pitch = 60
+set p_roll = 60
+set i_roll = 65
+set d_roll = 30
+set f_roll = 60
+set p_yaw = 50
+set i_yaw = 100
+set f_yaw = 100
 
 rateprofile 3
 
-rateprofile 4
-
-rateprofile 5
-
-# restore original rateprofile selection
-rateprofile 0
-
-# save configuration
 save
