@@ -4,7 +4,12 @@
 # start the command batch
 batch start
 
+# reset configuration to default settings
+defaults nosave
+
 board_name MATEKF411RX
+mcu_id 003400303239511134393435
+signature 
 
 # name: Pro series
 
@@ -43,8 +48,10 @@ set blackbox_device = NONE
 set dshot_idle_value = 450
 set dshot_burst = OFF
 set motor_pwm_protocol = DSHOT600
-set current_meter = NONE
+set current_meter = VIRTUAL
 set vbat_detect_cell_voltage = 30
+set ibatv_scale = 90
+set ibatv_offset = 29
 set yaw_motors_reversed = ON
 set small_angle = 180
 set gps_rescue_throttle_min = 1200
@@ -91,6 +98,31 @@ set p_yaw = 50
 set i_yaw = 100
 set f_yaw = 100
 
+profile 1
+
+profile 2
+
+# restore original profile selection
+profile 2
+
+rateprofile 0
+
+# rateprofile 0
+set tpa_rate = 50
+set tpa_breakpoint = 1500
+
+rateprofile 1
+
+rateprofile 2
+
 rateprofile 3
 
+rateprofile 4
+
+rateprofile 5
+
+# restore original rateprofile selection
+rateprofile 3
+
+# save configuration
 save
