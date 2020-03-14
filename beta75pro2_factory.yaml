@@ -28,7 +28,7 @@ serial 1 2048 115200 57600 0 115200
 # aux
 aux 0 0 0 1350 2100 0 0
 aux 1 1 1 900 2100 0 0
-aux 2 28 2 900 1300 0 0
+aux 2 13 2 1300 1700 0 0
 aux 3 35 2 1700 2100 0 0
 
 # vtxtable
@@ -59,6 +59,7 @@ set blackbox_device = NONE
 set dshot_idle_value = 450
 set dshot_burst = OFF
 set motor_pwm_protocol = DSHOT600
+set motor_poles = 12
 set bat_capacity = 300
 set vbat_max_cell_voltage = 435
 set current_meter = VIRTUAL
