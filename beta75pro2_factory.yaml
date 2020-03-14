@@ -139,6 +139,10 @@ rateprofile 2
 
 rateprofile 3
 
+# rateprofile 3
+set throttle_limit_type = SCALE
+set throttle_limit_percent = 80
+
 rateprofile 4
 
 rateprofile 5
