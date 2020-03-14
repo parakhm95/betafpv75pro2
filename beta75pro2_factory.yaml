@@ -44,6 +44,7 @@ vtxtable powervalues 0 1 2 3
 vtxtable powerlabels 25 200 500 800
 
 # master
+set gyro_sync_denom = 2
 set gyro_lowpass_type = BIQUAD
 set gyro_lowpass_hz = 150
 set gyro_lowpass2_hz = 0
@@ -58,7 +59,8 @@ set rx_spi_protocol = FRSKY_X_LBT
 set blackbox_device = NONE
 set dshot_idle_value = 450
 set dshot_burst = OFF
-set motor_pwm_protocol = DSHOT600
+set dshot_bidir = ON
+set motor_pwm_protocol = DSHOT300
 set motor_poles = 12
 set bat_capacity = 300
 set vbat_max_cell_voltage = 435
