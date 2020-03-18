@@ -16,9 +16,6 @@ signature
 # resources
 resource RX_BIND 1 B02
 
-# feature
-feature MOTOR_STOP
-
 # map
 map TAER1234
 
@@ -54,7 +51,7 @@ set dyn_notch_q = 200
 set dyn_notch_min_hz = 90
 set dyn_lpf_gyro_min_hz = 150
 set dyn_lpf_gyro_max_hz = 450
-set acc_calibration = -139,136,-232
+set acc_calibration = -150,26,-241
 set max_check = 2000
 set fpv_mix_degrees = 35
 set airmode_start_throttle_percent = 32
