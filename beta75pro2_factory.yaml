@@ -16,6 +16,10 @@ signature
 # resources
 resource RX_BIND 1 B02
 
+# beacon
+beacon RX_LOST
+beacon RX_SET
+
 # map
 map TAER1234
 
@@ -23,7 +27,7 @@ map TAER1234
 serial 1 2048 115200 57600 0 115200
 
 # aux
-aux 0 0 0 1350 2100 0 0
+aux 0 0 0 1550 2100 0 0
 aux 1 1 1 900 2100 0 0
 aux 2 13 2 1300 1700 0 0
 aux 3 35 2 1700 2100 0 0
@@ -42,15 +46,14 @@ vtxtable powerlabels 25 200 500 800
 
 # master
 set gyro_sync_denom = 2
-set gyro_lowpass_type = BIQUAD
 set gyro_lowpass_hz = 150
-set gyro_lowpass2_hz = 0
+set gyro_lowpass2_hz = 300
 set dyn_notch_range = LOW
 set dyn_notch_width_percent = 0
 set dyn_notch_q = 200
 set dyn_notch_min_hz = 90
-set dyn_lpf_gyro_min_hz = 150
-set dyn_lpf_gyro_max_hz = 450
+set dyn_lpf_gyro_min_hz = 240
+set dyn_lpf_gyro_max_hz = 600
 set acc_calibration = -150,26,-241
 set max_check = 2000
 set fpv_mix_degrees = 35
@@ -68,6 +71,7 @@ set current_meter = VIRTUAL
 set vbat_detect_cell_voltage = 30
 set ibatv_scale = 90
 set ibatv_offset = 29
+set beeper_dshot_beacon_tone = 4
 set yaw_motors_reversed = ON
 set small_angle = 180
 set gps_rescue_throttle_min = 1200
@@ -104,10 +108,9 @@ set name = PMG Pro75-II
 profile 0
 
 # profile 0
-set dyn_lpf_dterm_min_hz = 150
-set dyn_lpf_dterm_max_hz = 250
-set dterm_lowpass_type = BIQUAD
-set dterm_lowpass2_type = BIQUAD
+set dyn_lpf_dterm_min_hz = 84
+set dyn_lpf_dterm_max_hz = 204
+set dterm_lowpass2_hz = 180
 set iterm_rotation = ON
 set p_pitch = 60
 set i_pitch = 75
@@ -139,10 +142,6 @@ rateprofile 1
 rateprofile 2
 
 rateprofile 3
-
-# rateprofile 3
-set throttle_limit_type = SCALE
-set throttle_limit_percent = 80
 
 rateprofile 4
 
