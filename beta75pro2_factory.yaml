@@ -16,6 +16,9 @@ signature
 # resources
 resource RX_BIND 1 B02
 
+# feature
+feature MOTOR_STOP
+
 # beacon
 beacon RX_LOST
 beacon RX_SET
@@ -27,10 +30,10 @@ map TAER1234
 serial 1 2048 115200 57600 0 115200
 
 # aux
-aux 0 0 0 1550 2100 0 0
-aux 1 1 1 900 2100 0 0
-aux 2 13 2 1300 1700 0 0
-aux 3 35 2 1700 2100 0 0
+aux 0 0 0 1350 2100 0 0
+aux 1 13 2 1300 1700 0 0
+aux 2 35 2 1700 2100 0 0
+aux 3 47 1 1500 2100 0 0
 
 # vtxtable
 vtxtable bands 5
@@ -46,15 +49,16 @@ vtxtable powerlabels 25 200 500 800
 
 # master
 set gyro_sync_denom = 2
+set gyro_lowpass_type = BIQUAD
 set gyro_lowpass_hz = 150
-set gyro_lowpass2_hz = 300
+set gyro_lowpass2_hz = 0
 set dyn_notch_range = LOW
 set dyn_notch_width_percent = 0
 set dyn_notch_q = 200
 set dyn_notch_min_hz = 90
-set dyn_lpf_gyro_min_hz = 240
-set dyn_lpf_gyro_max_hz = 600
-set acc_calibration = -150,26,-241
+set dyn_lpf_gyro_min_hz = 150
+set dyn_lpf_gyro_max_hz = 450
+set acc_calibration = -128,-7,-271
 set max_check = 2000
 set fpv_mix_degrees = 35
 set airmode_start_throttle_percent = 32
@@ -93,13 +97,12 @@ set osd_stat_endbatt = ON
 set osd_stat_battery = ON
 set vtx_band = 5
 set vtx_channel = 7
-set vtx_power = 1
+set vtx_power = 2
 set vtx_freq = 5880
 set vcd_video_system = NTSC
-set frsky_spi_tx_id = 81,145
-set frsky_spi_offset = 29
-set frsky_spi_bind_hop_data = 3,171,106,41,211,146,81,16,186,121,56,226,161,96,31,201,136,71,6,176,111,46,219,151,86,21,191,126,61,231,166,101,36,206,141,76,11,181,116,51,221,156,91,26,196,131,66,255,255,255
-set frsky_x_rx_num = 16
+set frsky_spi_tx_id = 189,14
+set frsky_spi_offset = -27
+set frsky_spi_bind_hop_data = 3,13,23,33,45,53,63,73,83,93,103,113,123,133,143,153,163,175,183,193,203,213,223,233,8,18,28,38,48,58,68,78,90,98,108,118,128,138,148,158,168,178,188,198,208,221,228,255,255,255
 set gyro_2_spibus = 1
 set gyro_2_sensor_align = DEFAULT
 set gyro_rpm_notch_harmonics = 1
@@ -108,9 +111,10 @@ set name = PMG Pro75-II
 profile 0
 
 # profile 0
-set dyn_lpf_dterm_min_hz = 84
-set dyn_lpf_dterm_max_hz = 204
-set dterm_lowpass2_hz = 180
+set dyn_lpf_dterm_min_hz = 150
+set dyn_lpf_dterm_max_hz = 250
+set dterm_lowpass_type = BIQUAD
+set dterm_lowpass2_type = BIQUAD
 set iterm_rotation = ON
 set p_pitch = 60
 set i_pitch = 75
@@ -148,7 +152,7 @@ rateprofile 4
 rateprofile 5
 
 # restore original rateprofile selection
-rateprofile 3
+rateprofile 1
 
 # save configuration
 save
