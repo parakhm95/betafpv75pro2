@@ -49,14 +49,14 @@ vtxtable powerlabels 25 200 500 800
 
 # master
 set gyro_sync_denom = 2
-set gyro_lowpass_type = BIQUAD
 set gyro_lowpass_hz = 150
+set gyro_lowpass2_hz = 325
 set dyn_notch_range = LOW
 set dyn_notch_width_percent = 0
 set dyn_notch_q = 200
 set dyn_notch_min_hz = 90
-set dyn_lpf_gyro_min_hz = 150
-set dyn_lpf_gyro_max_hz = 450
+set dyn_lpf_gyro_min_hz = 260
+set dyn_lpf_gyro_max_hz = 650
 set acc_calibration = -128,-7,-271
 set max_check = 2000
 set fpv_mix_degrees = 35
@@ -112,10 +112,9 @@ set name = PMG Pro75-II
 profile 0
 
 # profile 0
-set dyn_lpf_dterm_min_hz = 150
-set dyn_lpf_dterm_max_hz = 250
-set dterm_lowpass_type = BIQUAD
-set dterm_lowpass2_type = BIQUAD
+set dyn_lpf_dterm_min_hz = 91
+set dyn_lpf_dterm_max_hz = 221
+set dterm_lowpass2_hz = 195
 set vbat_pid_gain = ON
 set feedforward_transition = 24
 set iterm_rotation = ON
